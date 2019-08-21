@@ -1,14 +1,13 @@
 # Prawnko
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prawnko`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Modularize your pdf code with this gem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'prawn'
 gem 'prawnko'
 ```
 
@@ -22,14 +21,48 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a class that inherits `Prawnko::Base`. This class is the main pdf component
+where the pdf generation is triggered. It includes `Prawn::View` module.
 
-## Development
+``` ruby
+class PdfDocument < Prawnko::Base
+  def generate
+    pdf.text 'Hello World'
+  end
+end
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+PdfDocument.new.generate
+# Hello world
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+A component can also be created using `Prawnko::Component`
 
-## Contributing
+``` ruby
+class Header < Prawnko::Component
+  def generate
+    pdf.text 'This is a header'
+  end
+end
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prawnko.
+To add `Header` on our previous base document, use `draw` method. It accepts a
+class that inherits from either `Prawnko::Base` or `Prawnko::Component`.
+``` ruby
+class PdfDocument < Prawnko::Base
+  def generate
+    draw Header
+    pdf.text 'Hello World'
+    draw ...
+  end
+end
+
+PdfDocument.new.generate
+# This is a Header
+# Hello World
+```
+
+`Prawnko::Component` can also use `draw` method
+
+
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/neume/prawnko.
