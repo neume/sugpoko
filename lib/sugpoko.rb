@@ -1,9 +1,9 @@
-require "prawnko/version"
+require "sugpoko/version"
 require 'prawn'
-require 'prawnko/base'
-require 'prawnko/component'
+require 'sugpoko/base'
+require 'sugpoko/component'
 require "prawn/measurement_extensions"
 
-module Prawnko
+module Sugpoko
   class Error < StandardError; end
 end

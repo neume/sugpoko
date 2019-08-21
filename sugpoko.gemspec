@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "prawnko/version"
+require "sugpoko/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "prawnko"
-  spec.version       = Prawnko::VERSION
+  spec.name          = "sugpoko"
+  spec.version       = Sugpoko::VERSION
   spec.authors       = ["Joseph Nelson Valeros"]
   spec.email         = ["valerosjoseph@gmail.com"]
 
   spec.summary       = %q{A prawnpdf wrapper }
   spec.description   = %q{Modularize your prawnpdf code }
-  spec.homepage      = "https://github.com/neume/prawnko"
+  spec.homepage      = "https://github.com/neume/sugpoko"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

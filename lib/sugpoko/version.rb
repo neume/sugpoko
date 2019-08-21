@@ -1,3 +1,3 @@
-module Prawnko
+module Sugpoko
   VERSION = "0.1.0"
 end

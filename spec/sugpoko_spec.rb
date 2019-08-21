@@ -1,6 +1,6 @@
-RSpec.describe Prawnko do
+RSpec.describe Sugpoko do
   it "has a version number" do
-    expect(Prawnko::VERSION).not_to be nil
+    expect(Sugpoko::VERSION).not_to be nil
   end
 
   it "does something useful" do

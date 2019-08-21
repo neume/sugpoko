@@ -1,4 +1,4 @@
-module Prawnko
+module Sugpoko
   class Base
     attr_reader :pdf, :data
 

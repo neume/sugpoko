@@ -1,4 +1,4 @@
-class Prawnko::Component
+class Sugpoko::Component
   attr_reader :pdf, :cursor_origin
 
   def generate

@@ -1,4 +1,4 @@
-# Prawnko
+# Sugpoko
 
 Modularize your pdf code with this gem
 
@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'prawn'
-gem 'prawnko'
+gem 'sugpoko'
 ```
 
 And then execute:
@@ -17,15 +17,15 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install prawnko
+    $ gem install sugpoko
 
 ## Usage
 
-Create a class that inherits `Prawnko::Base`. This class is the main pdf component
+Create a class that inherits `Sugpoko::Base`. This class is the main pdf component
 where the pdf generation is triggered. It includes `Prawn::View` module.
 
 ``` ruby
-class PdfDocument < Prawnko::Base
+class PdfDocument < Sugpoko::Base
   def generate
     pdf.text 'Hello World'
   end
@@ -35,10 +35,10 @@ PdfDocument.new.generate
 # Hello world
 ```
 
-A component can also be created using `Prawnko::Component`
+A component can also be created using `Sugpoko::Component`
 
 ``` ruby
-class Header < Prawnko::Component
+class Header < Sugpoko::Component
   def generate
     pdf.text 'This is a header'
   end
@@ -46,9 +46,9 @@ end
 ```
 
 To add `Header` on our previous base document, use `draw` method. It accepts a
-class that inherits from either `Prawnko::Base` or `Prawnko::Component`.
+class that inherits from either `Sugpoko::Base` or `Sugpoko::Component`.
 ``` ruby
-class PdfDocument < Prawnko::Base
+class PdfDocument < Sugpoko::Base
   def generate
     draw Header
     pdf.text 'Hello World'
@@ -61,8 +61,8 @@ PdfDocument.new.generate
 # Hello World
 ```
 
-`Prawnko::Component` can also use `draw` method
+`Sugpoko::Component` can also use `draw` method
 
 
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/neume/prawnko.
+Bug reports and pull requests are welcome on GitHub at https://github.com/neume/sugpoko.

@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "prawnko"
+require "sugpoko"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
