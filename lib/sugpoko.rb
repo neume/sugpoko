@@ -2,6 +2,7 @@ require "sugpoko/version"
 require 'prawn'
 require 'sugpoko/base'
 require 'sugpoko/component'
+require "sugpoko/point"
 require "prawn/measurement_extensions"
 
 module Sugpoko
