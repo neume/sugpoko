@@ -27,6 +27,10 @@ module Sugpoko
       "[#{x}, #{y}]"
     end
 
+    def to_ary
+      [x, y]
+    end
+
     private
 
     def identify(obj)
